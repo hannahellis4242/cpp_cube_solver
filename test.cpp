@@ -133,7 +133,7 @@ public:
 
 class TestTopTwistLeft : public TestOperation {
 public:
-  TestTopTwistRight(const cube::Configuration &in,
+  TestTopTwistLeft(const cube::Configuration &in,
                     const cube::Configuration &expected)
       : TestOperation(in, cube::top_twist_left, expected) {}
 
