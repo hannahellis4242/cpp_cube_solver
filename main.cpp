@@ -7,6 +7,6 @@
 
 int main()
 {
-	std::cout << cube::show_net(cube::solved()) << std::endl ;
+	std::cout << cube::show_net(cube::top_twist_right(cube::solved())) << std::endl ;
 	return 0 ;
 }
