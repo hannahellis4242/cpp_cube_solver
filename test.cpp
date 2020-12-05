@@ -131,50 +131,101 @@ public:
   std::string id() const final { return "TestTopTwistRight"; }
 };
 
+class TestTopTwistLeft : public TestOperation {
+public:
+  TestTopTwistRight(const cube::Configuration &in,
+                    const cube::Configuration &expected)
+      : TestOperation(in, cube::top_twist_left, expected) {}
+
+  std::string id() const final { return "TestTopTwistLeft"; }
+};
+
 int main() {
   test::TestRunner tests;
-  tests.add(new TestValue);
-  tests.add(new TestTopTwistRight(
-      {
-          cube::Value::White,  cube::Value::Blue,   cube::Value::White,
-          cube::Value::Yellow, cube::Value::White,  cube::Value::White,
-          cube::Value::Blue,   cube::Value::Red,    cube::Value::White,
-          cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
-          cube::Value::Yellow, cube::Value::White,  cube::Value::Green,
-          cube::Value::Red,    cube::Value::Green,  cube::Value::Orange,
-          cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
-          cube::Value::Green,  cube::Value::Green,  cube::Value::Yellow,
-          cube::Value::Red,    cube::Value::Red,    cube::Value::Green,
-          cube::Value::Orange, cube::Value::Orange, cube::Value::Yellow,
-          cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
-          cube::Value::Red,    cube::Value::Red,    cube::Value::Yellow,
-          cube::Value::Red,    cube::Value::Red,    cube::Value::Blue,
-          cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
-          cube::Value::Green,  cube::Value::White,  cube::Value::White,
-          cube::Value::Blue,   cube::Value::Yellow, cube::Value::Red,
-          cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
-          cube::Value::Yellow, cube::Value::Yellow, cube::Value::Green,
-      },
-      {
-          cube::Value::White,  cube::Value::White,  cube::Value::White,
-          cube::Value::Blue,   cube::Value::White,  cube::Value::Red,
-          cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
-          cube::Value::Green,  cube::Value::Yellow, cube::Value::Yellow,
-          cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
-          cube::Value::Yellow, cube::Value::White,  cube::Value::Green,
-          cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
-          cube::Value::Green,  cube::Value::Green,  cube::Value::Yellow,
-          cube::Value::Red,    cube::Value::Red,    cube::Value::Green,
-          cube::Value::Orange, cube::Value::Orange, cube::Value::Yellow,
-          cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
-          cube::Value::Red,    cube::Value::Red,    cube::Value::Yellow,
-          cube::Value::Red,    cube::Value::Red,    cube::Value::Blue,
-          cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
-          cube::Value::Green,  cube::Value::White,  cube::Value::White,
-          cube::Value::Blue,   cube::Value::Yellow, cube::Value::Red,
-          cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
-          cube::Value::Orange, cube::Value::Green,  cube::Value::Red,
-      }));
+  tests.add(new TestValue)
+      .add(new TestTopTwistRight(
+          {
+              cube::Value::White,  cube::Value::Blue,   cube::Value::White,
+              cube::Value::Yellow, cube::Value::White,  cube::Value::White,
+              cube::Value::Blue,   cube::Value::Red,    cube::Value::White,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
+              cube::Value::Yellow, cube::Value::White,  cube::Value::Green,
+              cube::Value::Red,    cube::Value::Green,  cube::Value::Orange,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
+              cube::Value::Green,  cube::Value::Green,  cube::Value::Yellow,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Green,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Yellow,
+              cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Yellow,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Blue,
+              cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
+              cube::Value::Green,  cube::Value::White,  cube::Value::White,
+              cube::Value::Blue,   cube::Value::Yellow, cube::Value::Red,
+              cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
+              cube::Value::Yellow, cube::Value::Yellow, cube::Value::Green,
+          },
+          {
+              cube::Value::White,  cube::Value::White,  cube::Value::White,
+              cube::Value::Blue,   cube::Value::White,  cube::Value::Red,
+              cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
+              cube::Value::Green,  cube::Value::Yellow, cube::Value::Yellow,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
+              cube::Value::Yellow, cube::Value::White,  cube::Value::Green,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
+              cube::Value::Green,  cube::Value::Green,  cube::Value::Yellow,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Green,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Yellow,
+              cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Yellow,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Blue,
+              cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
+              cube::Value::Green,  cube::Value::White,  cube::Value::White,
+              cube::Value::Blue,   cube::Value::Yellow, cube::Value::Red,
+              cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
+              cube::Value::Orange, cube::Value::Green,  cube::Value::Red,
+          }))
+      .add(new TestTopTwistLeft(
+          {
+              cube::Value::White,  cube::Value::Blue,   cube::Value::White,
+              cube::Value::Yellow, cube::Value::White,  cube::Value::White,
+              cube::Value::Blue,   cube::Value::Red,    cube::Value::White,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
+              cube::Value::Yellow, cube::Value::White,  cube::Value::Green,
+              cube::Value::Red,    cube::Value::Green,  cube::Value::Orange,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
+              cube::Value::Green,  cube::Value::Green,  cube::Value::Yellow,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Green,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Yellow,
+              cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Yellow,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Blue,
+              cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
+              cube::Value::Green,  cube::Value::White,  cube::Value::White,
+              cube::Value::Blue,   cube::Value::Yellow, cube::Value::Red,
+              cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
+              cube::Value::Yellow, cube::Value::Yellow, cube::Value::Green,
+          },
+          {
+              cube::Value::White,  cube::Value::White,  cube::Value::White,
+              cube::Value::Blue,   cube::Value::White,  cube::Value::Red,
+              cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
+              cube::Value::Green,  cube::Value::Yellow, cube::Value::Yellow,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
+              cube::Value::Yellow, cube::Value::White,  cube::Value::Green,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Orange,
+              cube::Value::Green,  cube::Value::Green,  cube::Value::Yellow,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Green,
+              cube::Value::Orange, cube::Value::Orange, cube::Value::Yellow,
+              cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Yellow,
+              cube::Value::Red,    cube::Value::Red,    cube::Value::Blue,
+              cube::Value::Blue,   cube::Value::Blue,   cube::Value::Green,
+              cube::Value::Green,  cube::Value::White,  cube::Value::White,
+              cube::Value::Blue,   cube::Value::Yellow, cube::Value::Red,
+              cube::Value::White,  cube::Value::Yellow, cube::Value::Blue,
+              cube::Value::Orange, cube::Value::Green,  cube::Value::Red,
+          }));
+
   tests.run();
   return 0;
 }
