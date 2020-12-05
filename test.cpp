@@ -1,8 +1,8 @@
 #include "Configuration.h"
 #include <algorithm>
 #include <functional>
- for
-   test
+
+//for test
 #include <iostream>
 #include <memory>
 #include <numeric>
