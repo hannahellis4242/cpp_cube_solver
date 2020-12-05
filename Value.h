@@ -3,6 +3,6 @@
 namespace cube
 {
   enum class Value{Red,Orange,Yellow,Green,Blue,White};
-  char show( const Value & value ) ;
+  char show( const Value & ) ;
 }
 #endif

@@ -6,7 +6,7 @@ clean :
 run : cube_solver
 	./cube_solver
 
-cube_solver : main.o Value.o
+cube_solver : main.o Value.o Configuration.o
 	g++ -std=c++17 $^ -o $@
 
 %.o : %.cpp
