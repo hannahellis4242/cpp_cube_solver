@@ -126,7 +126,7 @@ class TestTopTwistRight : public TestOperation {
 public:
   TestTopTwistRight(const cube::Configuration &in,
                     const cube::Configuration &expected)
-      : TestOperation(in, cube::top_twist_left, expected) {}
+      : TestOperation(in, cube::top_twist_right, expected) {}
 
   std::string id() const final { return "TestTopTwistRight"; }
 };
