@@ -25,7 +25,7 @@ public:
   }
   void operator()(std::ostream &os, const edge_descriptor e) const {
     const Instruction &x = graph_[e];
-      os << "[label=\"<< show(x)<<"\]";
+      os << "[label=\""<< show(x)<<"\]";
   }
 };
 } // namespace cube
