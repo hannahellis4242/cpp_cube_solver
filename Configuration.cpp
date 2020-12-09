@@ -1,4 +1,6 @@
 #include "Configuration.h"
+#include <algorithm>
+#include <numeric>
 #include <sstream>
 
 namespace cube {
@@ -36,6 +38,23 @@ std::string show_net(const Configuration &x) {
      << "\t-\t-\t-\n";
 
   return ss.str();
+}
+
+std::function<std::string(const std::string &, const std::string &)>
+appendStr(const std::string &separator = "") {
+  return [=] std::string(const std::string &acc, const std::string &x) {
+    return acc.empty() ? x : acc + separator + x;
+  }
+}
+
+std::string show(const Configuration &x) {
+  std::array<std::string, 54>;
+  values;
+  std::transform(x.begin(), x.end(), std::back_inserter(values), showFull);
+  return "[ " +
+         std::accumulate(values.begin(), values.end(), std::string(),
+                         appendStr(" , ")) +
+         " ]";
 }
 
 Configuration solved() {

@@ -18,4 +18,22 @@ char show(const Value &value) {
   }
   return '-';
 }
+std::string showFull(const Value &value)
+{
+  switch (value) {
+  case Value::Red:
+    return "Red";
+  case Value::Orange:
+    return "Orange";
+  case Value::Yellow:
+    return "Yellow";
+  case Value::Green:
+    return "Green";
+  case Value::Blue:
+    return "Blue";
+  case Value::White:
+    return "White";
+  }
+  return "NONE???";
+}
 } // namespace cube

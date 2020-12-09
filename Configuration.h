@@ -3,11 +3,11 @@
 
 #include "Value.h"
 #include <array>
-#include <string>
 
 namespace cube {
 using Configuration = std::array<Value, 54>;
 std::string show_net(const Configuration &);
+std::string show(const Configuration &);
 Configuration solved();
 
 Configuration top_twist_right(const Configuration &);
