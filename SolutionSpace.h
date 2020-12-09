@@ -10,8 +10,8 @@ using InstructionAndWeight = std::pair<Instruction, unsigned int>;
 class SolutionSpace {
 public:
   std::vector<InstructionAndWeight> next(const Configuration &,
-                                         const Instruction) const;
-  const Configuration &visit(const Configuration &, const Instruction);
+                                         const Instruction);
+  const Configuration &visit(const Configuration &, const Instruction) const;
 
   std::string show() const;
 };
